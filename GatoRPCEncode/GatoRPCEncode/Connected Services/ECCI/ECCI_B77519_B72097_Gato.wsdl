@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ECCI_B77519_B72097_Gato" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="ECCI_B77519_B72097_Gato" targetNamespace="urn:ECCI_B77519_B72097_Gato" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:ECCI_B77519_B72097_Gato" />
+  </wsdl:types>
+  <wsdl:message name="jugarIn">
+    <wsdl:part name="casilla" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="jugarOut" />
+  <wsdl:message name="juegaMaquinaIn" />
+  <wsdl:message name="juegaMaquinaOut">
+    <wsdl:part name="return" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="checkWinIn">
+    <wsdl:part name="casilla" type="xsd:int" />
+    <wsdl:part name="simbolo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkWinOut">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="checkCasillasIn">
+    <wsdl:part name="contigua1" type="xsd:int" />
+    <wsdl:part name="contigua2" type="xsd:int" />
+    <wsdl:part name="simbolo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkCasillasOut">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getCasillasRestantesIn" />
+  <wsdl:message name="getCasillasRestantesOut">
+    <wsdl:part name="return" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="setJugadorIn">
+    <wsdl:part name="nombre" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setJugadorOut" />
+  <wsdl:message name="getBoardIn" />
+  <wsdl:message name="getBoardOut">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="ECCI_B77519_B72097_GatoPort">
+    <wsdl:operation name="jugar">
+      <documentation>Gato::jugar()Metodo donde se cambia la casilla selecionada en el juego por una 'X'</documentation>
+      <wsdl:input message="tns:jugarIn" />
+      <wsdl:output message="tns:jugarOut" />
+    </wsdl:operation>
+    <wsdl:operation name="juegaMaquina">
+      <documentation>Gato::juegaMaquina() Metodo que genera el movimiento de la maquina rival o IA</documentation>
+      <wsdl:input message="tns:juegaMaquinaIn" />
+      <wsdl:output message="tns:juegaMaquinaOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkWin">
+      <documentation>Gato::checkWin() Metodo que verifica si el jugador ganó</documentation>
+      <wsdl:input message="tns:checkWinIn" />
+      <wsdl:output message="tns:checkWinOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkCasillas">
+      <documentation>Gato::checkCasillas() Metodo que verifica si las casillas contiguas a la seleccionada forma la combinacion necesaria para ganar</documentation>
+      <wsdl:input message="tns:jugarIn" />
+      <wsdl:output message="tns:jugarOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCasillasRestantes">
+      <documentation>Gato::getCasillasRestantes() Método que devuelve la cantidad de casillas restantes</documentation>
+      <wsdl:input message="tns:getCasillasRestantesIn" />
+      <wsdl:output message="tns:getCasillasRestantesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setJugador">
+      <documentation>Gato::setJugador()Metodo para solicitar el nombre del jugador</documentation>
+      <wsdl:input message="tns:setJugadorIn" />
+      <wsdl:output message="tns:setJugadorOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBoard">
+      <documentation>Gato::getBoard() Metodo que retorna el array que representa el tablero</documentation>
+      <wsdl:input message="tns:getBoardIn" />
+      <wsdl:output message="tns:getBoardOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ECCI_B77519_B72097_GatoBinding" type="tns:ECCI_B77519_B72097_GatoPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="jugar">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#jugar" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="juegaMaquina">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#juegaMaquina" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkWin">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#checkWin" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkCasillas">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#checkCasillas" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCasillasRestantes">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getCasillasRestantes" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setJugador">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#setJugador" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBoard">
+      <soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getBoard" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ECCI_B77519_B72097_Gato" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ECCI_B77519_B72097_GatoService">
+    <wsdl:port name="ECCI_B77519_B72097_GatoPort" binding="tns:ECCI_B77519_B72097_GatoBinding">
+      <soap:address location="http://titanic.ecci.ucr.ac.cr/~eb77519/Gato/RPC-Encode/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

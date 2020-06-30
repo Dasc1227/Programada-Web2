@@ -1,0 +1,10 @@
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\bin\Debug\GatoRPCEncode.exe.config
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\bin\Debug\GatoRPCEncode.exe
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\bin\Debug\GatoRPCEncode.pdb
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.csprojAssemblyReference.cache
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.Gato.resources
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.Properties.Resources.resources
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.csproj.GenerateResource.cache
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.exe
+C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.pdb

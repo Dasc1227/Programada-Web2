@@ -63,7 +63,7 @@ namespace GatoRPCEncode
             int duracion = Convert.ToInt32(stopwatchElapsed.TotalSeconds);
 
             if (resultado.Contains("GANADO")) {
-                gato.reiniciar();
+                gato.reiniciar(duracion);
             }
 
             MessageBox.Show(resultado + "\nDuracion del turno: " + duracion+" segundos");
@@ -255,7 +255,37 @@ namespace GatoRPCEncode
 
         private void top_Click(object sender, EventArgs e)
         {
-            string topJugadores = gato.getTop();
+            top.Text = "Actualizar";
+            List<int> tempTiempos = new List<int>();
+            List<string> tempJugadores = new List<string>();
+
+            if (gato.getRecordJugadores() == "") {
+                gato.guardarRecords();
+            }
+
+            getTop.Text = "";
+            
+
+
+            string[] topJugadores = gato.getTop().Split('\n');
+
+            for (int i = 0; i < topJugadores.Length; i++) {
+                string[] temp = topJugadores[i].Split(':');
+                tempJugadores.Add(temp[0]);
+                tempTiempos.Add(Convert.ToInt32(temp[1]));
+            }
+
+            List<int> tiempos = tempTiempos;
+
+            for (int i = 0; i < 10; i++)
+            {
+                int minIndex = tempTiempos.IndexOf(tempTiempos.Where(x => x >= 0).Min());
+
+                getTop.Text += "#-" + (i + 1) + " " + tempJugadores[minIndex] +" "+ tempTiempos[minIndex]+ " segundos\n";
+
+                tempTiempos[minIndex] = -1;
+            }
+
         }
     }
 }

@@ -205,9 +205,10 @@
             // getTop
             // 
             this.getTop.AutoSize = true;
-            this.getTop.Location = new System.Drawing.Point(549, 127);
+            this.getTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getTop.Location = new System.Drawing.Point(445, 106);
             this.getTop.Name = "getTop";
-            this.getTop.Size = new System.Drawing.Size(22, 13);
+            this.getTop.Size = new System.Drawing.Size(33, 18);
             this.getTop.TabIndex = 19;
             this.getTop.Text = "-----";
             // 

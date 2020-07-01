@@ -42,7 +42,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ranking = new System.Windows.Forms.Label();
+            this.top = new System.Windows.Forms.Button();
+            this.getTop = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Casilla1
@@ -185,26 +186,36 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(417, 59);
+            this.label4.Location = new System.Drawing.Point(380, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(256, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Mejores 10 tiempos (ganados):";
             // 
-            // ranking
+            // top
             // 
-            this.ranking.AutoSize = true;
-            this.ranking.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ranking.Location = new System.Drawing.Point(482, 113);
-            this.ranking.Name = "ranking";
-            this.ranking.Size = new System.Drawing.Size(136, 18);
-            this.ranking.TabIndex = 17;
-            this.ranking.Text = "--No hay entradas--";
+            this.top.Location = new System.Drawing.Point(642, 59);
+            this.top.Name = "top";
+            this.top.Size = new System.Drawing.Size(75, 23);
+            this.top.TabIndex = 18;
+            this.top.Text = "Mostrar";
+            this.top.UseVisualStyleBackColor = true;
+            this.top.Click += new System.EventHandler(this.top_Click);
+            // 
+            // getTop
+            // 
+            this.getTop.AutoSize = true;
+            this.getTop.Location = new System.Drawing.Point(549, 127);
+            this.getTop.Name = "getTop";
+            this.getTop.Size = new System.Drawing.Size(22, 13);
+            this.getTop.TabIndex = 19;
+            this.getTop.Text = "-----";
             // 
             // Gato
             // 
-            this.ClientSize = new System.Drawing.Size(680, 421);
-            this.Controls.Add(this.ranking);
+            this.ClientSize = new System.Drawing.Size(729, 421);
+            this.Controls.Add(this.getTop);
+            this.Controls.Add(this.top);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
@@ -241,7 +252,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label ranking;
+        private System.Windows.Forms.Button top;
+        private System.Windows.Forms.Label getTop;
     }
 }
 

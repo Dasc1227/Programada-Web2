@@ -16,23 +16,13 @@ namespace GatoRPCEncode
     public partial class Gato : Form
     {
         private ECCI.ECCI_B77519_B72097_GatoPortClient gato;
-        private string path;
         private Stopwatch cronometro;
-        private List<int> records;
 
         public Gato()
         {
             InitializeComponent();
             gato = new ECCI.ECCI_B77519_B72097_GatoPortClient();
-            path = "";
             cronometro = new Stopwatch();
-            records = new List<int>();
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void EmpezarTurno() {
@@ -50,17 +40,6 @@ namespace GatoRPCEncode
             label3.Hide();
 
             label1.Text += textBox1.Text;
-
-
-            Directory.CreateDirectory("records/");
-
-            path = "records/records" + DateTime.Now.ToString("yyyy-MM-dd__HH-mm-ss") + ".txt";
-
-            StreamWriter writer = new StreamWriter(path);
-
-            writer.WriteLine(String.Format("{0}  :  {1}  ", "Ranking", "Duracion (s)"));
-
-            writer.Close();
         }
 
         private void SeguirJugando()
@@ -84,7 +63,7 @@ namespace GatoRPCEncode
             int duracion = Convert.ToInt32(stopwatchElapsed.TotalSeconds);
 
             if (resultado.Contains("GANADO")) {
-                SoloTop(Convert.ToInt32(stopwatchElapsed.TotalSeconds));
+                gato.reiniciar();
             }
 
             MessageBox.Show(resultado + "\nDuracion del turno: " + duracion+" segundos");
@@ -92,41 +71,13 @@ namespace GatoRPCEncode
             cronometro.Reset();
         }
 
-        private void SoloTop(int segundosIntento) {
-            records.Sort();
-
-            if (records.Count < 10 && !records.Contains(segundosIntento))
-            {
-                records.Add(segundosIntento);
-            }
-            else {
-                for (int i = 0; i < records.Count; i++)
-                {
-                    if (segundosIntento < records[i])
-                    {
-                        records[i] = segundosIntento;
-                        break;
-                    }
-                }
-            }
-            records.Sort();
-            ranking.Text = "";
-            StreamWriter writer = new StreamWriter(path);
-            writer.Write(string.Format("{0}  :  {1}  ", "Ranking", "Duracion (s)"));
-            for (int i = 0; i < records.Count; i++)
-            {
-                writer.Write(string.Format("#{0}  ---  {1} segundos \n", i+1, records[i]));
-                ranking.Text += string.Format("#{0}  ---  {1} segundos \n", i + 1, records[i]);
-            }
-            writer.Close();
-
-        }
 
         private void btn_jugar_Click(object sender, EventArgs e)
         {
-            if (records.Count == 0)
+            if (btn_jugar.Text == "Empezar")
             {
                 EmpezarTurno();
+                gato.setJugador(textBox1.Text);
             }
             else
             {
@@ -300,6 +251,11 @@ namespace GatoRPCEncode
                 Presionado(8);
 
             }
+        }
+
+        private void top_Click(object sender, EventArgs e)
+        {
+            string topJugadores = gato.getTop();
         }
     }
 }

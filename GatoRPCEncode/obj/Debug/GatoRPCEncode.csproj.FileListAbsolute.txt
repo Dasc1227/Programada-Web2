@@ -8,3 +8,13 @@ C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.
 C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.csproj.CoreCompileInputs.cache
 C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.exe
 C:\Users\David\source\repos\GatoRPCEncode\GatoRPCEncode\obj\Debug\GatoRPCEncode.pdb
+C:\Projects\Programada-Web2\GatoRPCEncode\bin\Debug\GatoRPCEncode.exe.config
+C:\Projects\Programada-Web2\GatoRPCEncode\bin\Debug\GatoRPCEncode.exe
+C:\Projects\Programada-Web2\GatoRPCEncode\bin\Debug\GatoRPCEncode.pdb
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.Gato.resources
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.Properties.Resources.resources
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.csproj.GenerateResource.cache
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.csproj.CoreCompileInputs.cache
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.exe
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.pdb
+C:\Projects\Programada-Web2\GatoRPCEncode\obj\Debug\GatoRPCEncode.csprojAssemblyReference.cache

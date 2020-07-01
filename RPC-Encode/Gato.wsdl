@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Descripción WSDL de la clase Gato. -->
+
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:tns="urn:ECCI_B77519_B72097_Gato"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			 xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			 name="ECCI_B77519_B72097_Gato"
+			 targetNamespace="urn:ECCI_B77519_B72097_Gato">
+
+	<!-- Tipos complejos -->
+
+	<types>
+		<xsd:schema targetNamespace="urn:ECCI_B77519_B72097_Gato"/>
+	</types>
+
+	<!-- Mensajes para comunicarse con la clase Gato. -->
+
+	<message name="jugarIn">
+		<part name="casilla" type="xsd:int"/>
+	</message>
+
+	<message name="jugarOut"/>
+
+	<message name="juegaMaquinaIn"/>
+
+	<message name="juegaMaquinaOut">
+		<part name="return" type="xsd:int"/>
+	</message>
+
+	<message name="checkWinIn">
+		<part name="casilla" type="xsd:int"/>
+		<part name="simbolo" type="xsd:string"/>
+	</message>
+
+	<message name="checkWinOut">
+		<part name="return" type="xsd:boolean"/>
+	</message>
+
+
+	<message name="checkCasillasIn">
+		<part name="contigua1" type="xsd:int"/>
+		<part name="contigua2" type="xsd:int"/>
+		<part name="simbolo" type="xsd:string"/>
+	</message>
+
+	<message name="checkCasillasOut">
+		<part name="return" type="xsd:boolean"/>
+	</message>
+
+	<message name="getCasillasRestantesIn"/>
+
+	<message name="getCasillasRestantesOut">
+		<part name="return" type="xsd:int"/>
+	</message>
+
+	<message name="setJugadorIn">
+		<part name="nombre" type="xsd:string"/>
+	</message>
+
+	<message name="setJugadorOut"/>
+
+	<message name="getBoardIn"/>
+
+	<message name="getBoardOut">
+		<part name="return" type="xsd:string"/>
+	</message>
+
+	
+	<message name="reiniciarIn">
+		<part name="duracion" type="xsd:int"/>
+	</message>
+	
+	<message name="reiniciarOut"/>
+	
+	<message name="guardarRecordsIn"/>
+	
+	<message name="guardarRecordsOut"/>
+	
+	<message name="getRecordJugadoresIn"/>
+	
+	<message name="getRecordJugadoresOut">
+		<part name="return" type="xsd:string"/>
+	</message>
+
+	
+	<message name="getRecordTiemposIn"/>
+	
+	<message name="getRecordTiemposOut">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	<message name="guardarResultadosIn">
+		<part name="duracion" type="xsd:int"/>
+	</message>
+	
+	<message name="guardarResultadosOut"/>
+	
+	<message name="getTopIn"/>
+	
+	<message name="getTopOut">
+		<part name="return" type="xsd:string"/>
+	</message>
+	
+	
+	<!-- Puerto para comunicar con la clase Gato, "ECCI_B77519_BXXXX_Gato" -->
+
+	<portType name="ECCI_B77519_B72097_GatoPort">
+		<operation name="jugar">
+			<documentation>Gato::jugar()Metodo donde se cambia la casilla selecionada en el juego por una 'X'</documentation>
+			<input message="tns:jugarIn"/>
+			<output message="tns:jugarOut"/>
+		</operation>
+		<operation name="juegaMaquina">
+			<documentation>Gato::juegaMaquina() Metodo que genera el movimiento de la maquina rival o IA</documentation>
+			<input message="tns:juegaMaquinaIn"/>
+			<output message="tns:juegaMaquinaOut"/>
+		</operation>
+		<operation name="checkWin">
+			<documentation>Gato::checkWin() Metodo que verifica si el jugador ganó</documentation>
+			<input message="tns:checkWinIn"/>
+			<output message="tns:checkWinOut"/>
+		</operation>
+		<operation name="checkCasillas">
+			<documentation>Gato::checkCasillas() Metodo que verifica si las casillas contiguas a la seleccionada forma la combinacion necesaria para ganar</documentation>
+			<input message="tns:jugarIn"/>
+			<output message="tns:jugarOut"/>
+		</operation>
+		<operation name="getCasillasRestantes">
+			<documentation>Gato::getCasillasRestantes() Método que devuelve la cantidad de casillas restantes</documentation>
+			<input message="tns:getCasillasRestantesIn"/>
+			<output message="tns:getCasillasRestantesOut"/>
+		</operation>
+		<operation name="setJugador">
+			<documentation>Gato::setJugador()Metodo para solicitar el nombre del jugador</documentation>
+			<input message="tns:setJugadorIn"/>
+			<output message="tns:setJugadorOut"/>
+		</operation>
+		<operation name="getBoard">
+			<documentation>Gato::getBoard() Metodo que retorna el array que representa el tablero</documentation>
+			<input message="tns:getBoardIn"/>
+			<output message="tns:getBoardOut"/>
+		</operation>
+		
+		<operation name="reiniciar">
+			<documentation>Gato::reiniciar() Metodo que reinicia el juego</documentation>
+			<input message="tns:reiniciarIn"/>
+			<output message="tns:reiniciarOut"/>
+		</operation>
+		
+		<operation name="guardarRecords">
+			<documentation>Gato::guardarRecords() Metodo que guarda los records del archivo en dos array</documentation>
+			<input message="tns:guardarRecordsIn"/>
+			<output message="tns:guardarRecordsOut"/>
+		</operation>
+		
+		<operation name="getRecordJugadores">
+			<documentation>Gato::getRecordJugadores() Metodo que retorna todos los records de nombres</documentation>
+			<input message="tns:getRecordJugadoresIn"/>
+			<output message="tns:getRecordJugadoresOut"/>
+		</operation>
+		
+		<operation name="getRecordTiempos">
+			<documentation>Gato::getRecordTiempos() Metodo que retorna todos los records de tiempos</documentation>
+			<input message="tns:getRecordTiemposIn"/>
+			<output message="tns:getRecordTiemposOut"/>
+		</operation>
+		
+		<operation name="guardarResultados">
+			<documentation>Gato::guardarResultados() Metodo que registra el intento actual en la base de datos</documentation>
+			<input message="tns:guardarResultadosIn"/>
+			<output message="tns:guardarResultadosOut"/>
+		</operation>
+		
+		<operation name="getTop">
+			<documentation>Gato::getTop() Metodo que retorna el top 10 de jugadas almacenadas en la base de datos</documentation>
+			<input message="tns:getTopIn"/>
+			<output message="tns:getTopOut"/>
+		</operation>
+	
+	</portType>
+
+	<!-- Vinculación de los llamados con el transporte - RPC, SOAP/Encoded over HTTP -->
+
+	<binding name="ECCI_B77519_B72097_GatoBinding" type="tns:ECCI_B77519_B72097_GatoPort">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<operation name="jugar">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#jugar"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+
+		<operation name="juegaMaquina">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#juegaMaquina"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="checkWin">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#checkWin"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+
+		<operation name="checkCasillas">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#checkCasillas"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="getCasillasRestantes">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getCasillasRestantes"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+
+
+		<operation name="setJugador">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#setJugador"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+
+		<operation name="getBoard">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getBoard"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>	
+		
+		<operation name="reiniciar">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#reiniciar"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="guardarRecords">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#guardarRecords"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="getRecordJugadores">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getRecordJugadores"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>	
+		
+		<operation name="getRecordTiempos">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getRecordTiempos"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>	
+		
+		<operation name="guardarResultados">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#guardarResultados"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="guardarResultados">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#guardarResultados"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>
+		
+		<operation name="getTop">
+			<soap:operation soapAction="urn:ECCI_B77519_B72097_Gato#Gato#getTop"/>
+			<input>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</input>
+			<output>
+				<soap:body use="encoded"
+				           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						   namespace="urn:ECCI_B77519_B72097_Gato"/>
+			</output>
+		</operation>	
+		
+		
+	</binding>
+
+	<!-- Punto de comunicación con la clase Gato -->
+
+	<service name="ECCI_B77519_B72097_GatoService">
+		<port name="ECCI_B77519_B72097_GatoPort" binding="tns:ECCI_B77519_B72097_GatoBinding">
+			<soap:address location="http://titanic.ecci.ucr.ac.cr/~eb72097/Gato/RPC-Encode/"/>
+		</port>
+	</service>
+</definitions>

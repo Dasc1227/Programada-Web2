@@ -1,4 +1,4 @@
 *.txt
 .vs/
-GatoRPCEncode/bin/Debug
+GatoRPCEncode/bin/Debug/*
 GatoRPCEncode/bin/Release

@@ -15,62 +15,120 @@ namespace GatoRPCEncode.ECCI {
     [System.ServiceModel.ServiceContractAttribute(Namespace="urn:ECCI_B77519_B72097_Gato", ConfigurationName="ECCI.ECCI_B77519_B72097_GatoPort")]
     public interface ECCI_B77519_B72097_GatoPort {
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#jugar", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:jugarRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:jugarResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         void jugar(int casilla);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#jugar", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:jugarRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:jugarResponse")]
         System.Threading.Tasks.Task jugarAsync(int casilla);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#juegaMaquina", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:juegaMaquinaRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:juegaMaquinaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         int juegaMaquina();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#juegaMaquina", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:juegaMaquinaRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:juegaMaquinaResponse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<int> juegaMaquinaAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#checkWin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkWinRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkWinResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool checkWin(int casilla, string simbolo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#checkWin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkWinRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkWinResponse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<bool> checkWinAsync(int casilla, string simbolo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#checkCasillas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkCasillasRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkCasillasResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         void checkCasillas(int casilla);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#checkCasillas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkCasillasRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:checkCasillasResponse")]
         System.Threading.Tasks.Task checkCasillasAsync(int casilla);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#getCasillasRestantes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getCasillasRestantesReque" +
+            "st", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getCasillasRestantesRespo" +
+            "nse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         int getCasillasRestantes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#getCasillasRestantes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getCasillasRestantesReque" +
+            "st", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getCasillasRestantesRespo" +
+            "nse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<int> getCasillasRestantesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#setJugador", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:setJugadorRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:setJugadorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         void setJugador(string nombre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#setJugador", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:setJugadorRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:setJugadorResponse")]
         System.Threading.Tasks.Task setJugadorAsync(string nombre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#getBoard", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getBoardRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getBoardResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string getBoard();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato#Gato#getBoard", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getBoardRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getBoardResponse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> getBoardAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:reiniciarRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:reiniciarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        void reiniciar(int duracion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:reiniciarRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:reiniciarResponse")]
+        System.Threading.Tasks.Task reiniciarAsync(int duracion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarRecordsRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarRecordsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        void guardarRecords();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarRecordsRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarRecordsResponse")]
+        System.Threading.Tasks.Task guardarRecordsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordJugadoresRequest" +
+            "", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordJugadoresRespons" +
+            "e")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string getRecordJugadores();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordJugadoresRequest" +
+            "", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordJugadoresRespons" +
+            "e")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> getRecordJugadoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordTiemposRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordTiemposResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string getRecordTiempos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordTiemposRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getRecordTiemposResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> getRecordTiemposAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarResultadosRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarResultadosResponse" +
+            "")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        void guardarResultados(int duracion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarResultadosRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:guardarResultadosResponse" +
+            "")]
+        System.Threading.Tasks.Task guardarResultadosAsync(int duracion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getTopRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getTopResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string getTop();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getTopRequest", ReplyAction="urn:ECCI_B77519_B72097_Gato:ECCI_B77519_B72097_GatoPort:getTopResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<string> getTopAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -154,6 +212,54 @@ namespace GatoRPCEncode.ECCI {
         
         public System.Threading.Tasks.Task<string> getBoardAsync() {
             return base.Channel.getBoardAsync();
+        }
+        
+        public void reiniciar(int duracion) {
+            base.Channel.reiniciar(duracion);
+        }
+        
+        public System.Threading.Tasks.Task reiniciarAsync(int duracion) {
+            return base.Channel.reiniciarAsync(duracion);
+        }
+        
+        public void guardarRecords() {
+            base.Channel.guardarRecords();
+        }
+        
+        public System.Threading.Tasks.Task guardarRecordsAsync() {
+            return base.Channel.guardarRecordsAsync();
+        }
+        
+        public string getRecordJugadores() {
+            return base.Channel.getRecordJugadores();
+        }
+        
+        public System.Threading.Tasks.Task<string> getRecordJugadoresAsync() {
+            return base.Channel.getRecordJugadoresAsync();
+        }
+        
+        public string getRecordTiempos() {
+            return base.Channel.getRecordTiempos();
+        }
+        
+        public System.Threading.Tasks.Task<string> getRecordTiemposAsync() {
+            return base.Channel.getRecordTiemposAsync();
+        }
+        
+        public void guardarResultados(int duracion) {
+            base.Channel.guardarResultados(duracion);
+        }
+        
+        public System.Threading.Tasks.Task guardarResultadosAsync(int duracion) {
+            return base.Channel.guardarResultadosAsync(duracion);
+        }
+        
+        public string getTop() {
+            return base.Channel.getTop();
+        }
+        
+        public System.Threading.Tasks.Task<string> getTopAsync() {
+            return base.Channel.getTopAsync();
         }
     }
 }
